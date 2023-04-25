@@ -1,0 +1,29 @@
+<div class="wrapper" #wrapperDiv>
+  <gauge-steel
+    [widgetUUID]="widgetUUID"
+    [gaugeType]="config.gaugeType"
+    [barGauge]="config.barGraph"
+
+    [radialSize]="config.radialSize"
+
+    [backgroundColor]="config.backgroundColor"
+    [frameColor]="config.frameColor"
+
+    [minValue]="config.minValue"
+    [maxValue]="config.maxValue"
+
+    [zones]=""
+    [title]="config.displayName"
+    [units]="config.paths['gaugePath'].convertUnitTo"
+    [value]="dataValue"
+
+  ></gauge-steel>
+
+
+  <div class="settingsButton" *ngIf="unlockStatus">
+      <button  color="accent" mat-mini-fab class="selector-fab" (click)="openWidgetSettings()">
+          <span class="fa-solid fa-cog"></span>
+      </button>
+  </div>
+
+</div>
